@@ -70,7 +70,13 @@
                 const x = e.clientX;
                 const y = e.clientY;
                 console.log(`${x} ${y}`);
-            })
+                vertical.style.transform = `translateX(${x}px)`;
+                horizontal.style.transform = `translateY(${y}px)`;
+                target.style.transform = `translate(${x - targetHalfWidth}px,${y - targetHalfHeight}px)`;
+                tag.style.transform = `translate(${x}px,${y}px)`;
+                tag.innerHTML = `${x}px, ${y}px`
+            });
+            
 
         })
     </script>
